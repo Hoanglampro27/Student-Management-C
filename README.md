@@ -16,6 +16,7 @@ The project helps user manage student information on the console, including name
 - Modular code structure (main.c, menu.c, student.c)
 
 ## Project structure
+```
 StudentManagement/
 │
 ├── main.c          # Main function and program entry.
@@ -23,6 +24,7 @@ StudentManagement/
 ├── menu.h          # Declarations of menu functions.
 ├── student.c       # Handles student information logic.
 ├── student.h       # Struct and function declarations for student.
+```
 
 ## Future improvements
 - Implement sorting student by GPA or name.
@@ -32,3 +34,4 @@ StudentManagement/
 
 ## How to Compile and Run.
 - Open the Terminal of Command prompt in project folder.
+
