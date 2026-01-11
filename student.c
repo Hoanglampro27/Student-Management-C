@@ -109,3 +109,37 @@ void updatestudent(st stds[], int count){
     printf("Khong tim thay sinh vien.\n");
     printf("\n");
 }
+
+void savetofile(st stds[], int count){
+    FILE *f; //Đặt con trỏ
+    f=fopen("studentdata.txt", "w");
+    if (f==NULL){
+        printf("Loi tao hoac mo file. \n");
+        exit(1);
+    }
+    for (int i=0;i<count;i++){
+        fprintf(f, "%s %d %s %.2f\n", stds[i].Studentname, stds[i].StudentID, stds[i].Studentclass, stds[i].GPA);
+    }
+    fclose(f);
+    printf("Da luu danh sach thanh cong.\n");
+}
+
+int loadfromfile(st stds[]){ //Hàm để đọc dữ liệu sinh viên vào mảng stds[]
+    FILE *f;
+    f=fopen("studentdata.txt","r");
+    if (f=NULL){
+        printf("Chua co file, khoi tao danh sach rong.\n");
+        exit(1);
+    }
+    int count=0;
+    while (fscanf(f,"%s %d %s %.2f\n",stds[count].Studentname, &stds[count].StudentID, stds[count].Studentclass, &stds[count].GPA)){
+        count++;
+        if(count >=Max) break; //Phòng trường hợp quá số lượng
+    }
+
+    fclose(f);
+
+    printf("Da doc %d sinh vien tu file du lieu.\n", count);
+    return count;
+ 
+}

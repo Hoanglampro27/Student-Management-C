@@ -19,5 +19,7 @@ void searchIDstudent(st stds[], int count);
 void deletestudent(st stds[], int *count);
 void updatestudent(st stds[], int count);
 void showMenu();
+void savetofile(st stds[], int count);
+int loadfromfile(st stds[]);
 
 #endif
